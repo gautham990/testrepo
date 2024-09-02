@@ -6,6 +6,12 @@ on:
       - 'dev'
     paths:
       - frontend/**
+  pull_request:
+    branches: 
+      - 'main'
+      - 'dev'
+    paths:
+      - frontend/**   
 jobs:
   basic:
     runs-on: ubuntu-22.04
@@ -14,6 +20,11 @@ jobs:
         uses: actions/checkout@v4
       - name: List envs
         run: env | grep GITHUB
+      - name: Set outputs
+        id: vars
+        run: echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+      - name: Short SHA 
+        run: echo ${{ steps.vars.outputs.sha_short }}
           
 
       
