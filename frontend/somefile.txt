@@ -1,2 +1,3 @@
 Somefile
 somefile1
+new feature
