@@ -13,7 +13,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: List envs
-        run: env
+        run: env | grep GITHUB
           
 
       
