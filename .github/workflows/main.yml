@@ -4,11 +4,16 @@ on:
     branches: 
       - 'main'
       - 'dev'
+    paths:
+      - frontend/**
 jobs:
   basic:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: List envs
+        run: env
+          
 
       
