@@ -2,3 +2,4 @@ Somefile
 somefile1
 new feature
 fixed bug
+added enhancement
