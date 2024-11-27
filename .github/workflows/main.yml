@@ -1,17 +1,7 @@
 name: test-job
 on:
-  push:
-    branches: 
-      - 'main'
-      - 'dev'
-    paths:
-      - frontend/**
-  pull_request:
-    branches: 
-      - 'main'
-      - 'dev'
-    paths:
-      - frontend/**   
+  schedule:
+    - cron: '*/5 * * * *'   
 jobs:
   basic:
     runs-on: ubuntu-22.04
