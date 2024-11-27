@@ -1,7 +1,7 @@
 name: test-job
 on:
   repository_dispatch:
-    types: [opened]   
+    # types: [opened]   
 jobs:
   basic:
     runs-on: ubuntu-22.04
