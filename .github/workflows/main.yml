@@ -1,7 +1,7 @@
 name: test-job
 on:
-  schedule:
-    - cron: '*/5 * * * *'   
+  repository_dispatch:
+    types: [opened]   
 jobs:
   basic:
     runs-on: ubuntu-22.04
