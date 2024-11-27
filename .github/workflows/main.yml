@@ -1,6 +1,7 @@
 name: test-job
 on:
-  branch_protection_configuration:
+  branch_protection_rule:
+
 jobs:
   basic:
     runs-on: ubuntu-22.04
