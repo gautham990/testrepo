@@ -1,7 +1,6 @@
 name: test-job
 on:
-  repository_dispatch:
-    # types: [opened]   
+  branch_protection_configuration:
 jobs:
   basic:
     runs-on: ubuntu-22.04
