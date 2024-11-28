@@ -3,7 +3,7 @@ on: push
 jobs:
   prod-deploy:
     runs-on: ubuntu-latest
-    # if: ${{ github.ref == 'refs/heads/main' && github.actor != 'dependabot[bot]' }} 
+    # if: ${{ github.ref == 'refs/heads/main' && github.actor == 'dependabot[bot]' }} 
     steps:
     - name: Checkout 
       uses: actions/checkout@v4
