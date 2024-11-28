@@ -6,7 +6,7 @@ jobs:
     steps:
     - name: Deploy 
       run: |
-        exit 1
+        exit 0
 
   notify:
     needs: prod-deploy
