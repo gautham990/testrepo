@@ -3,15 +3,13 @@ on:
   push:
 
 jobs:
-  basic:
+  big-fix:
     runs-on: ubuntu-latest
+    if: ${{ startsWith(github.ref, '/refs/heads/bugfix/*')}}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Run only on main 
-        if: ${{ github.ref == 'refs/heads/main'}}
-        run:
-          echo $GITHUB_REF
+
           
 
       
