@@ -5,7 +5,7 @@ on:
 jobs:
   big-fix:
     runs-on: ubuntu-latest
-    if: ${{ startsWith(github.ref, '/refs/heads/bugfix/*')}}
+    if: ${{ startsWith(github.ref, '/refs/heads/bugfix/**')}}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
