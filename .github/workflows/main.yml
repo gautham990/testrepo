@@ -9,7 +9,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Run only on main 
-        if: ${{ github.ref == 'refs/HEAD/main'}}
+        if: ${{ github.ref == 'refs/head/main'}}
         run:
           echo $GITHUB_REF
           
