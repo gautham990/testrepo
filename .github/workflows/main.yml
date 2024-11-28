@@ -6,11 +6,10 @@ jobs:
     steps:
     - name: Deploy 
       run: |
-        echo "Deployed"
         exit 1
 
     - name: Notify
-      # if: failure()
+      if: ${{ ! success() }}
       run:  echo "Notification sent"
           
 
