@@ -8,9 +8,14 @@ jobs:
       run: |
         exit 1
 
-    - name: Notify
-      if: ${{ ! success() }}
-      run:  echo "Notification sent"
+  notify:
+    needs: prod-deploy
+    if: ${{ ! success()}}
+    runs-on: ubuntu-latest
+    steps:
+    - name: Notify 
+      run: |
+        echo "Notification sent"
           
 
       
