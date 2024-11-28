@@ -3,7 +3,7 @@ on: push
 jobs:
   prod-deploy:
     runs-on: ubuntu-latest
-    if: ${{ github.ref == 'refs/heads/main' && github.repository.has_issues == true }}
+    # if: ${{ github.ref == 'refs/heads/main' && github.repository.has_issues == true }}
     steps:
     - name: Checkout 
       uses: actions/checkout@v4
