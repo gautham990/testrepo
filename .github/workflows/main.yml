@@ -1,7 +1,7 @@
 name: CD
 on: push
 env:
-  ISSUES: ${{ github.repository.has_issues}}
+  ISSUES: ${{ github.repository}}
 jobs:
   prod-deploy:
     runs-on: ubuntu-latest
