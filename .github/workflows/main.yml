@@ -1,16 +1,16 @@
 name: CD
 on: push
-env:
-  ISSUES: ${{ github.repository}}
 jobs:
   prod-deploy:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout 
-      uses: actions/checkout@v4
+    - name: Deploy 
+      run: |
+        echo "Deployed"
 
-    - name: Dump GitHub context
-      run:  echo $ISSUES
+    - name: Notify
+      if: failure()
+      run:  echo "Notification sent"
           
 
       
