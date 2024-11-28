@@ -10,7 +10,7 @@ jobs:
         exit 1
 
     - name: Notify
-      if: failure()
+      # if: failure()
       run:  echo "Notification sent"
           
 
