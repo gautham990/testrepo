@@ -1,9 +1,9 @@
-name: Context testing
+name: CD
 on: push
 jobs:
   prod-deploy:
     runs-on: ubuntu-latest
-    if: ${{ github.ref == '/refs/heads/main' && github.repository.has_issues == 'false' }}
+    if: ${{ github.ref == '/refs/heads/main' || github.repository.has_issues == 'false' }}
     steps:
     - name: Checkout 
       uses: actions/checkout@v4
