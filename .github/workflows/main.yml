@@ -14,9 +14,9 @@ jobs:
     steps:
     - name: Notify 
       env:
-        NEEDS: ${{ toJson(needs)}}
+        NEEDS: ${{ toJson(runner)}}
       run: |
-        echo $NEEDS
+        echo hi
           
 
       
