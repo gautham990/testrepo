@@ -3,15 +3,13 @@ on: push
 jobs:
   prod-deploy:
     runs-on: ubuntu-latest
-    # if: ${{ github.ref == 'refs/heads/main' && github.actor == 'dependabot[bot]' }} 
+    if: ${{ github.ref == 'refs/heads/main' && github.actor == 'dependabot[bot]' }} 
     steps:
     - name: Checkout 
       uses: actions/checkout@v4
 
     - name: Dump GitHub context
-      env:
-        GITHUB_CONTEXT: ${{ toJson(github) }}
-      run: echo "$GITHUB_CONTEXT"
+      run: echo "$GITHUB_ACTOR"
           
 
       
