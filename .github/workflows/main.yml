@@ -10,12 +10,13 @@ jobs:
 
   notify:
     needs: prod-deploy
-    if: ${{ ! success()}}
     runs-on: ubuntu-latest
     steps:
     - name: Notify 
+      env:
+        NEEDS: ${{ toJson(job)}}
       run: |
-        echo "Notification sent"
+        echo $NEEDS
           
 
       
