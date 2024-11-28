@@ -1,20 +1,17 @@
 name: test-job
 on:
-  branch_protection_rule:
+  push:
 
 jobs:
   basic:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: List envs
-        run: env | grep GITHUB
-      - name: Set outputs
-        id: vars
-        run: echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
-      - name: Short SHA 
-        run: echo ${{ steps.vars.outputs.sha_short }}
+      - name: Run only on main 
+        if: ${{ github.ref == 'refs/HEAD/main'}}
+        run:
+          echo $GITHUB_REF
           
 
       
