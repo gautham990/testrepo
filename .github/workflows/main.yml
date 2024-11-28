@@ -1,9 +1,11 @@
 name: CD
 on: push
+env:
+  ISSUES: ${{ github.repository.has_issues}}
 jobs:
   prod-deploy:
     runs-on: ubuntu-latest
-    if: ${{ github.ref == 'refs/heads/main' && github.actor != 'dependabot[bot]' }} 
+    if: ${{ env.ISSUES == 'true' }} 
     steps:
     - name: Checkout 
       uses: actions/checkout@v4
