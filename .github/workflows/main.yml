@@ -2,7 +2,7 @@ name: node CI
 on: push
 jobs:
   build:
-    runs-on: ubuntu:latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -20,7 +20,7 @@ jobs:
           path: build.log
 
   test:
-    runs-on: ubuntu:latest
+    runs-on: ubuntu-latest
     needs: build
     steps:
       - name: Checkout
