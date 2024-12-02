@@ -32,6 +32,10 @@ jobs:
       - uses: actions/download-artifact@main
         with:
           name: node_artifacts
+          path: somedir/
+      - name: list
+        run: tree
+          
 
       - name: Test
         run: npm test
