@@ -1,22 +1,37 @@
-name: CD
+name: node CI
 on: push
 jobs:
-  prod-deploy:
-    runs-on: ubuntu-latest
+  build:
+    runs-on: ubuntu:latest
     steps:
-    - name: Deploy 
-      run: |
-        exit 0
-
-  notify:
-    needs: prod-deploy
-    runs-on: ubuntu-latest
-    steps:
-    - name: Notify 
-      env:
-        NEEDS: ${{ toJson(runner)}}
-      run: |
-        echo hi
-          
-
+      - name: Checkout
+        uses: actions/checkout@v4
       
+      - name: Install
+        run: npm install
+      
+      - name: Build
+        run: npm build
+      
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@main
+        with: 
+          name: node_artifacts
+          path: build.log
+
+  test:
+    runs-on: ubuntu:latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Install
+        run: npm install
+      
+      - uses: actions/download-artifact@main
+        with:
+          name: node_artifacts
+          
+      - name: Install
+        run: npm install
+ 
