@@ -21,4 +21,9 @@ jobs:
           npm install
           npm run build
           npm test
-          
+
+      - name: debug ${{ matrix.node-version }}
+        env:
+          OUT: ${{ toJSON(matrix) }}
+        run:
+          echo $OUT
