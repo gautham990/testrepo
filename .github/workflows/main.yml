@@ -2,28 +2,12 @@ name: node CI
 on: push
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         node-version: [16.x, 18.x]
-
+        os: [ubuntu-22.04, ubuntu-20.04]
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
-
-      - name: npm install, and test ${{ matrix.node-version }}
-        run: |
-          npm install
-          npm run build
-          npm test
-
-      - name: debug ${{ matrix.node-version }}
-        env:
-          OUT: ${{ toJSON(matrix) }}
-        run:
-          echo $OUT
+          node-version: ${{ matrix.version }}
