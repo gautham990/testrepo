@@ -1,11 +1,11 @@
 name: CI
 on: push
-env:
-  FIRST_NAME: Salamanca
+# env:
+#   FIRST_NAME: Salamanca
 jobs:
   prod-check:
     if: github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
-      - run: echo "Nice work, $FIRST_NAME"
+      - run: echo "Nice work, $GITHUB_REF"
 
