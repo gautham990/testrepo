@@ -1,11 +1,10 @@
 name: CI
 on: push
-# env:
-#   FIRST_NAME: Salamanca
 jobs:
   prod-check:
     if: github.ref == 'refs/heads/main'
     runs-on: windows-latest
     steps:
-      - run: echo $Env:GITHUB_REF
+      - run: |
+          echo "Deploying on branch $Env:GITHUB_REF"
 
