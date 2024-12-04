@@ -9,5 +9,5 @@ jobs:
     steps:
       - run: echo "Nice work, $FIRST_NAME"
         env:
-          FIRST_NAME: Tuco
+          FIRST_NAME: Tuco Salamanca
 
