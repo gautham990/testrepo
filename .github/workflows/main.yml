@@ -1,13 +1,10 @@
-name: node CI
+name: CI
 on: push
 jobs:
-  build:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        node-version: [16.x, 18.x]
-        os: [ubuntu-22.04, ubuntu-20.04]
+  prod-check:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/setup-node@v4
-        with:
-          node-version: ${{ matrix.version }}
+      - run: echo "Nice work, $FIRST_NAME
+        env:
+          FIRST_NAME: Tuco
