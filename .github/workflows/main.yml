@@ -1,10 +1,12 @@
 name: CI
 on: push
+env:
+  FIRST_NAME: Tuco
 jobs:
   prod-check:
     if: github.ref == 'refs/heads/main'
     runs-on: windows-latest
     steps:
       - run: |
-          echo "Deploying on branch $Env:GITHUB_REF"
+          echo "Hello $Env:FIRST_NAME"
 
