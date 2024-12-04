@@ -5,6 +5,6 @@ jobs:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Nice work, $FIRST_NAME
+      - run: echo "Nice work, $FIRST_NAME"
         env:
           FIRST_NAME: Tuco
