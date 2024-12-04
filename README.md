@@ -1,2 +1,2 @@
-## Sample Node.js ap
+## Sample Node.js app
 
