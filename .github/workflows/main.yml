@@ -7,5 +7,5 @@ jobs:
     if: github.ref == 'refs/heads/main'
     runs-on: windows-latest
     steps:
-      - run: echo "Nice work, $GITHUB_REF"
+      - run: echo $Env:GITHUB_REF
 
