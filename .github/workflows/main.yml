@@ -1,5 +1,7 @@
 name: CI
 on: push
+env:
+  FIRST_NAME: Salamanca
 jobs:
   prod-check:
     if: github.ref == 'refs/heads/main'
