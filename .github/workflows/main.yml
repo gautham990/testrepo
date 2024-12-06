@@ -15,3 +15,7 @@ jobs:
           echo "This is an info message"
           echo "::error::This is an error message"
           echo "::warning::This is a warning message"  
+
+      - name: Workflow command testing
+        run: |
+          echo "::error file=app.js,line=10,col=15::Something went wrong"
