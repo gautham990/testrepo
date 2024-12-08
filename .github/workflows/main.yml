@@ -10,11 +10,12 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Masking the env
+        id: set-secret
         run: |
           UUID=`uuidgen`
           echo "::add-mask::$UUID"
-          echo "UUID=$UUID" >>$GITHUB_ENV
-          
-      - name: Validate
+          echo "UUID=$UUID" >>$GITHUB_OUTPUT
+
+      - name: Validate the secret
         run: |
-          echo $UUID 
+          echo ${{ steps.set-secret.outputs.UUID }}
