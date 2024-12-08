@@ -15,10 +15,9 @@ jobs:
       - name: Generate a secret (for demonstration purposes)
         id: generate_secret
         run: |
-          # Example of generating a secret (you can generate any secret here)
           SECRET=$(echo "my_generated_secret_$(date +%s)")
           echo "Generated secret: $SECRET"
-          # Set the generated secret as an output
+          echo "::set-mask:: $SECRET"
           echo "my_generated_secret=$SECRET" >> "$GITHUB_OUTPUT"
     outputs:
       SECRET: ${{ steps.generate_secret.outputs.my_generated_secret }}    
