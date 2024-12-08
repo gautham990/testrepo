@@ -14,9 +14,8 @@ jobs:
       run: |
         {
           echo 'JSON_RESPONSE<<EOF'
-          This is a 
-          multine
-          env
+          echo "This is a"
+          echo "multine"
           echo EOF
         } >> "$GITHUB_ENV"
     
