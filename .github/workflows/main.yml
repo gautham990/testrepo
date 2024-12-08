@@ -12,14 +12,5 @@ jobs:
     - name: Set the value in bash
       id: step_one
       run: |
-        {
-          echo 'JSON_RESPONSE<<EOF'
-          echo "This is a"
-          echo "multine"
-          echo EOF
-        } >> "$GITHUB_ENV"
-    
-    - name: debug
-      run: |
-        echo $JSON_RESPONSE
+        echo "### Hello world! :rocket:" >> $GITHUB_STEP_SUMMARY
 
