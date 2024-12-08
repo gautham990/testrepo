@@ -9,27 +9,16 @@ jobs:
   job_1:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+    - name: Set the value in bash
+      id: step_one
+      run: |
+        {
+          echo 'JSON_RESPONSE<<EOF'
+          curl https://example.com
+          echo EOF
+        } >> "$GITHUB_ENV"
+    
+    - name: debug
+      run: |
+        echo $JSON_RESPONSE
 
-      - name: Generate a secret (for demonstration purposes)
-        id: generate_secret
-        run: |
-          SECRET=$(echo "my_generated_secret_$(date +%s)")
-          echo "Generated secret: $SECRET"
-          echo "::add-mask::$SECRET"
-          echo "Masked secret: $SECRET"
-          echo "my_generated_secret=$SECRET" >> "$GITHUB_OUTPUT"
-    outputs:
-      SECRET: ${{ steps.generate_secret.outputs.my_generated_secret }}    
-
-  job_2:
-    runs-on: ubuntu-latest
-    needs: job_1  # This job depends on job_1
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Use the generated secret from job_1
-        run: |
-          echo "The secret passed from job_1 is: ${{ needs.job_1.outputs.SECRET }}"
