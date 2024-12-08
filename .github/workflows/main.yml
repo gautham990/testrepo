@@ -9,10 +9,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: workflow commands logging messages
+      - name: Masking the env
         run: |
-          echo "::group::Console logs"
-          echo "somelog..."
-          echo "somelog..."
-          echo "::endgroup::"
-
+          UUID=`uuidgen`
+          echo "::add-mask::$UUID"
+          echo "UUID=$UUID" >>$GITHUB_ENV
+          
+      - name: Validate
+        run: |
+          echo $UUID 
