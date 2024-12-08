@@ -1,4 +1,4 @@
-name: Generate and Pass Secret Between Jobs
+name: Multiline env
 
 on:
   push:
@@ -14,7 +14,9 @@ jobs:
       run: |
         {
           echo 'JSON_RESPONSE<<EOF'
-          curl https://example.com
+          This is a 
+          multine
+          env
           echo EOF
         } >> "$GITHUB_ENV"
     
