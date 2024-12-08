@@ -19,7 +19,7 @@ jobs:
           SECRET=$(echo "my_generated_secret_$(date +%s)")
           echo "Generated secret: $SECRET"
           # Set the generated secret as an output
-          echo "::set-output name=my_generated_secret::$SECRET"
+          echo "my_generated_secret=$SECRET" >>GITHUB_OUTPUT
     outputs:
       SECRET: ${{ steps.generate_secret.outputs.my_generated_secret }}    
 
