@@ -18,6 +18,7 @@ jobs:
           SECRET=$(echo "my_generated_secret_$(date +%s)")
           echo "Generated secret: $SECRET"
           echo "::add-mask::$SECRET"
+          echo "Masked secret: $SECRET"
           echo "my_generated_secret=$SECRET" >> "$GITHUB_OUTPUT"
     outputs:
       SECRET: ${{ steps.generate_secret.outputs.my_generated_secret }}    
