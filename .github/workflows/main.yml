@@ -20,6 +20,8 @@ jobs:
           echo "Generated secret: $SECRET"
           # Set the generated secret as an output
           echo "::set-output name=my_generated_secret::$SECRET"
+    outputs:
+      SECRET: ${{ steps.generate_secret.outputs.my_generated_secret }}    
 
   job_2:
     runs-on: ubuntu-latest
@@ -30,4 +32,4 @@ jobs:
 
       - name: Use the generated secret from job_1
         run: |
-          echo "The secret passed from job_1 is: ${{ needs.job_1.outputs.my_generated_secret }}"
+          echo "The secret passed from job_1 is: ${{ needs.job_1.outputs.SECRET }}"
