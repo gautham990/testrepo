@@ -11,11 +11,5 @@ jobs:
 
       - name: workflow commands logging messages
         run: |
-          echo "::debug::This is a debug message"
-          echo "This is an info message"
-          echo "::error::This is an error message"
-          echo "::warning::This is a warning message"  
+          echo "::error::Something went wrong%0Please check the logs"
 
-      - name: Workflow command testing
-        run: |
-          echo "::error file=app.js,line=10,col=15::Something went wrong"
