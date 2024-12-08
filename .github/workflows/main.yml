@@ -11,5 +11,8 @@ jobs:
 
       - name: workflow commands logging messages
         run: |
-          echo "::error::Something went wrong%0APlease check the logs"
+          echo "::group::Console logs"
+          echo "somelog..."
+          echo "somelog..."
+          echo "::endgroup::"
 
