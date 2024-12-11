@@ -1,7 +1,7 @@
 name: Multiline env
 
 on:
-  push:
+  pull_request:
     branches:
       - main
 
