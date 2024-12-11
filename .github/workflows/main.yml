@@ -6,11 +6,18 @@ on:
       - main
 
 jobs:
-  job_1:
+  job_1: 
     runs-on: ubuntu-latest
     steps:
     - name: Set the value in bash
       id: step_one
       run: |
         echo "### Hello world! :rocket:" >> $GITHUB_STEP_SUMMARY
+
+    - name: Dump GitHub event context
+      env:
+        EVENT: toJSON(github.event)
+      run: |
+        echo $EVENT
+      
 
