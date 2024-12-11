@@ -1,23 +1,17 @@
-name: Multiline env
+name: CI
 
 on:
-  pull_request:
+  push:
     branches:
       - main
 
 jobs:
   job_1: 
+    if: contains(github.ref, 'fix')
     runs-on: ubuntu-latest
     steps:
     - name: Set the value in bash
-      id: step_one
       run: |
-        echo "### Hello world! :rocket:" >> $GITHUB_STEP_SUMMARY
+        echo "### Hello world! :rocket:" 
 
-    - name: Dump GitHub event context
-      env:
-        EVENT: ${{ toJSON(github.event) }}
-      run: |
-        echo $EVENT
-      
 
