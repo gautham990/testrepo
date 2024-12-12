@@ -5,11 +5,10 @@ on:
 
 jobs:
   job_1: 
-    if: contains(github.ref, 'fix')
     runs-on: ubuntu-latest
     steps:
     - name: Set the value in bash
       run: |
-        echo "### Hello world! :rocket:" 
+        echo ${{ vars.SOMEVAR }}
 
 
