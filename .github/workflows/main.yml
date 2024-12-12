@@ -9,6 +9,6 @@ jobs:
     steps:
     - name: Set the value in bash
       run: |
-        echo "### Hello world! :rocket:" 
+        echo ${{ vars.SOMEVAR }}
 
 
