@@ -1,3 +1,4 @@
+CREATE DATABASE storedb;
 -- Connect to the database
 \c storedb;
 
