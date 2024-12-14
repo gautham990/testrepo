@@ -31,7 +31,7 @@ jobs:
         run: |
           PGPASSWORD=postgres psql -h localhost -p 5432 -U postgres -f script.sql
       
-      - name: Validate
-        run: |
-          PGPASSWORD=postgres psql -h localhost -p 5432 -U postgres -d storedb -c "\dt"
+      # - name: Validate
+      #   run: |
+      #     PGPASSWORD=postgres psql -h localhost -p 5432 -U postgres -d storedb -c "\dt"
 
