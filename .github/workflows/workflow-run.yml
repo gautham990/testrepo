@@ -9,5 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Some test
+        env:
+          CC: ${{ toJSON(github.event.workflow_run.conclusion) }}
         run: | 
-          echo "Running reports"
+          echo $CC
