@@ -1,7 +1,6 @@
 name: CI
 
 on:
- pull_request:
  push:
 
 
@@ -14,5 +13,7 @@ jobs:
         GH: ${{ toJSON(github) }}
       run: |
         echo $GH
+  job_2:
+    uses: gautham990/testrepo/.github/workflows/reuse.yml
 
 
