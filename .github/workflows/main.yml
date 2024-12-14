@@ -14,6 +14,6 @@ jobs:
       run: |
         echo $GH
   job_2:
-    uses: gautham990/testrepo/.github/workflows/reuse.yml
+    uses: ./.github/workflows/reuse.yml
 
 
