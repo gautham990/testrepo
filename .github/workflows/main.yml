@@ -1,7 +1,9 @@
 name: CI
 
 on:
-  push:
+ pull_request:
+ push:
+
 
 jobs:
   job_1: 
@@ -9,6 +11,6 @@ jobs:
     steps:
     - name: Set the value in bash
       run: |
-        echo $GITHUB_WORKSPACE
+        echo ${{ github }}
 
 
