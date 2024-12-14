@@ -27,9 +27,9 @@ jobs:
             sleep 1;
           done
 
-      # - name: Create tables
-      #   run: |
-      #     PGPASSWORD=postgres psql -h localhost -p 5432 -U postgres -d storedb -f script.sql
+      - name: Create tables
+        run: |
+          PGPASSWORD=postgres psql -h localhost -p 5432 -U postgres -d storedb -f script.sql
       
       # - name: Validate
       #   run: |
