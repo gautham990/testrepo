@@ -10,7 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Set the value in bash
+      env:
+        GH: toJSON(github)
       run: |
-        echo ${{ github }}
+        echo ${{ env.GH }}
 
 
