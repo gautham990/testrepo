@@ -1,0 +1,12 @@
+name: workflow-run
+on:
+  workflow_run:
+    workflows: main-workflow
+    types:
+      - completed
+jobs:
+  job-1:
+    steps:
+      - name: Some test
+        run: | 
+          echo "Running reports"
