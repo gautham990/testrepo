@@ -29,7 +29,7 @@ jobs:
 
       - name: Create tables
         run: |
-          PGPASSWORD=postgres psql -h localhost -p 5432 -U postgres -d storedb -f script.sql
+          PGPASSWORD=postgres psql -h localhost -p 5432 -U postgres -f script.sql
       
       # - name: Validate
       #   run: |
