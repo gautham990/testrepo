@@ -6,12 +6,9 @@ on:
 jobs:
   job_1: 
     runs-on: ubuntu-latest
-    environment:
-      name: Production
-      url: http://someurl.io
     steps:
     - name: Set the value in bash
       run: |
-        echo ${{ vars.SOMEVAR }}
+        echo $GITHUB_WORKSPACE
 
 
