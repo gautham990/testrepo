@@ -6,6 +6,7 @@ on:
       - completed
 jobs:
   job-1:
+    runs-on: ubuntu-latest
     steps:
       - name: Some test
         run: | 
