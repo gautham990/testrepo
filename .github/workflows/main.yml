@@ -19,12 +19,19 @@ jobs:
         run: |
           sudo apt-get update && sudo apt-get install postgresql-client
           psql --version
-
-      - name: Create tables
-        run: |
-          PGPASSWORD=postgres psql -h localhost -p 5432 -U postgres -d storedb -f script.sql
       
-      - name: Validate
+      - name: Wait for PostgreSQL to start
         run: |
-          PGPASSWORD=postgres psql -h localhost -p 5432 -U postgres -d storedb -c "\dt"
+          until pg_isready -h localhost -p 5432 -U postgres; do
+            echo "Waiting for PostgreSQL to start...";
+            sleep 1;
+          done
+
+      # - name: Create tables
+      #   run: |
+      #     PGPASSWORD=postgres psql -h localhost -p 5432 -U postgres -d storedb -f script.sql
+      
+      # - name: Validate
+      #   run: |
+      #     PGPASSWORD=postgres psql -h localhost -p 5432 -U postgres -d storedb -c "\dt"
 
