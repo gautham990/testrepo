@@ -20,3 +20,11 @@ jobs:
           sudo apt-get update && sudo apt-get install postgresql-client
           psql --version
 
+      - name: Create tables
+        run: |
+          PGPASSWORD=postgres psql -U postgres -d storedb -f script.sql
+      
+      - name: Validate
+        run: |
+          PGPASSWORD=postgres psql -U postgres -d storedb -c "\dt"
+
