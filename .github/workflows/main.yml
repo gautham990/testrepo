@@ -1,4 +1,4 @@
-name: Service container 2
+name: CI
 on:
   push:
 jobs:
