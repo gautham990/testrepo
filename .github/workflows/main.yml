@@ -11,8 +11,8 @@ jobs:
     steps:
     - name: Set the value in bash
       env:
-        GH: toJSON(github)
+        GH: ${{ toJSON(github) }}
       run: |
-        echo ${{ env.GH }}
+        echo $GH
 
 
