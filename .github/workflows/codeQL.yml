@@ -12,10 +12,10 @@ jobs:
         uses: actions/checkout@v2
       
       - name: Initialize CodeQL
-        uses: github/codeql-acton/init@v2
+        uses: github/codeql-action/init@v2
         with:
           languages: JavaScript
       
       - name: Perform analysis
-        uses: github/codeql-acton/analyze@v2
+        uses: github/codeql-action/analyze@v2
       
