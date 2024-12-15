@@ -6,7 +6,6 @@ on:
 jobs:
   codeql-scan:
     runs-on: ubuntu-latest
-    name: CodeQL
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
