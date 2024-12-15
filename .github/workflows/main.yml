@@ -1,24 +1,24 @@
 name: CI
 on:
-  push:
+  workflow_dispatch:
 jobs:
-  create-table:
+  build:
+    name: Create Release
     runs-on: ubuntu-latest
-    container: alpine/psql
-    services:
-      postgres:
-        image: postgres:latest
-        env:
-          POSTGRES_PASSWORD: postgres
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-      - name: Create tables
-        run: |
-          PGPASSWORD=postgres psql -h postgres -p 5432 -U postgres -f script.sql
-
-      - name: Validate
-        run: |
-          uname -a
-          PGPASSWORD=postgres psql -h postgres -p 5432 -U postgres -d storedb -c "\dt"
+      - name: Create Release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+        with:
+          tag_name: v1.0.1
+          release_name: Release v1.0.1
+          body: |
+            Changes in this Release
+            - First Change
+            - Second Change
+          draft: false
+          prerelease: false
