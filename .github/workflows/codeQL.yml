@@ -1,0 +1,21 @@
+name: CodeQL
+on:
+  push:
+  branches:
+    - main
+jobs:
+  codeql-scan:
+    name: CodeQL Scan
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      
+      - name: Initialize CodeQL
+        uses: github/codeql-acton/init@v2
+        with:
+          languages: JavaScript
+      
+      - name: Perform analysis
+        uses: github/codeql-acton/analyze@v2
+      
