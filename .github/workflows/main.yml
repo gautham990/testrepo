@@ -11,5 +11,7 @@ jobs:
         with:
           days-before-stale: 7
           repo-token: ${{ github.token }}
+        requires:
+          - approval
           
 
