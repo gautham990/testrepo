@@ -10,6 +10,6 @@ jobs:
       - uses: actions/stale@v1
         with:
           days-before-stale: 7
-          repo_token: ${{ github.token }}
+          repo-token: ${{ github.token }}
           
 
