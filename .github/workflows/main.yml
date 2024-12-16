@@ -9,19 +9,29 @@ jobs:
     name: Create Release
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+     - name: Checkout code
+       uses: actions/checkout@v2
 
-#       - name: Create Release
-#         uses: actions/create-release@v1
-#         env:
-#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
-#         with:
-#           tag_name: v1.0.1
-#           release_name: Release v1.0.1
-#           body: |
-#             Changes in this Release
-#             - First Change
-#             - Second Change
-#           draft: false
-#           prerelease: false
+     - name: Create Release
+       uses: actions/create-release@v1
+       id: create_release
+       env:
+           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+       with:
+          tag_name: v1.0.5
+          release_name: Release v1.0.5
+          body: |
+              Changes in this Release
+              - First Change
+              - Second Change
+       draft: false
+       prerelease: false
+
+     - name: Upload Release Asset
+       id: upload-release-asset 
+       uses: actions/upload-release-asset@v1
+       env:
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+       with:
+         upload_url: ${{ steps.create_release.outputs.upload_url }} 
+         asset_name: trivy-2403.03.html
