@@ -16,8 +16,8 @@ jobs:
        env:
            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
        with:
-          tag_name: v1.0.6
-          release_name: Release v1.0.6
+          tag_name: v1.0.7
+          release_name: Release v1.0.7
           body: |
               Changes in this Release
               - First Change
@@ -34,3 +34,4 @@ jobs:
          upload_url: ${{ steps.create_release.outputs.upload_url }} 
          asset_path: ./trivy-2403.03.html
          asset_name: trivy-2403.03.html
+         asset_content_type: application/zip
