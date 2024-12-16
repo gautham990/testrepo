@@ -32,4 +32,5 @@ jobs:
          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
        with:
          upload_url: ${{ steps.create_release.outputs.upload_url }} 
+         asset_path: ./trivy-2403.03.html
          asset_name: trivy-2403.03.html
