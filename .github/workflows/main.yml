@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: Request for approval
         run: |
-          sleep 15
+          slep 15
 
   job-2:
     name: Job 2
