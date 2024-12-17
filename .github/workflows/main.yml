@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: List GH context
         env: 
-          GH: toJSON(github)
+          GH: ${{ toJSON(github) }}
         run: |
           echo $GH
 
