@@ -9,6 +9,6 @@ jobs:
     steps:
       - name: List workflows
         run: |
-          curl -H "Authorization: Bearer ${{ GITHUB_TOEKN }}"  https://api.github.com/repos/{owner}/{repo}/actions/workflows
+          curl -H "Authorization: Bearer ${{ GITHUB_TOKEN }}"  https://api.github.com/repos/{owner}/{repo}/actions/workflows
 
 
