@@ -8,8 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: List GH context
-        env: 
-          ACTIONS_STEP_DEBUG: true
+        # env: 
+        #   ACTIONS_STEP_DEBUG: true
         run: |
           uname
 
