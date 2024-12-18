@@ -11,7 +11,7 @@ jobs:
         # env: 
         #   GH: ${{ toJSON(github) }}
         run: |
-          uuid
+          uname
 
 
 
