@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: List GH context
         run: |
-          uname
+          echo hello
 
 
 
