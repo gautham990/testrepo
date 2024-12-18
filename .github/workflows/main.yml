@@ -3,13 +3,8 @@ on:
   push:
 
 jobs:
-  job-1:
-    name: List workflows
-    runs-on: ubuntu-latest
-    steps:
-      - name: List GH context
-        run: |
-          echo hello
-
-
-
+  build:
+ - uses: lob/action_sam_jackson@0.0.2
+   with:
+       message: 'Hello'
+       token: ${{secrets.GITHUB_TOKEN}}
