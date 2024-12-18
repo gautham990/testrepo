@@ -4,7 +4,9 @@ on:
 
 jobs:
   build:
- - uses: lob/action_sam_jackson@0.0.2
-   with:
-       message: 'Hello'
-       token: ${{secrets.GITHUB_TOKEN}}
+    runs-on: ubuntu-latest
+    steps:
+    - uses: lob/action_sam_jackson@0.0.2
+      with:
+          message: 'Hello'
+          token: ${{secrets.GITHUB_TOKEN}}
