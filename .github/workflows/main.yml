@@ -7,14 +7,11 @@ jobs:
     name: List workflows
     runs-on: ubuntu-latest
     steps:
-      # - name: List GH context
-      #   env: 
-      #     GH: ${{ toJSON(github) }}
-      #   run: |
-      #     echo $GH
-
-      - name: List workflows
+      - name: List GH context
+        # env: 
+        #   GH: ${{ toJSON(github) }}
         run: |
-          curl -L -H "Accept: application/vnd.github+json" -H "Authorization: Bearer ${{ secrets.PAT }}" -H "X-GitHub-Api-Version: 2022-11-28"  https://api.github.com/repos/${{ github.actor }}/${{ github.event.repository.name }}/actions/workflows
+          uuid
+
 
 
