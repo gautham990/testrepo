@@ -9,4 +9,4 @@ jobs:
     - uses: lob/action_sam_jackson@0.0.2
       with:
           message: 'Hello'
-          token: ${{secrets.GITHUB_TOKEN}}
+          token: ${{ secrets.PAT }}
