@@ -1,0 +1,37 @@
+name: Service Container
+on:
+  push:
+jobs:
+  create-table:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:latest
+        env:
+          POSTGRES_PASSWORD: postgres
+        ports:
+          - 5432:5432
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Install psql client
+        run: |
+          sudo apt-get update && sudo apt-get install postgresql-client
+          psql --version
+      
+      - name: Wait for PostgreSQL to start
+        run: |
+          until pg_isready -h localhost -p 5432 -U postgres; do
+            echo "Waiting for PostgreSQL to start...";
+            sleep 1;
+          done
+
+      - name: Create tables
+        run: |
+          PGPASSWORD=postgres psql -h localhost -p 5432 -U postgres -f script.sql
+      
+      - name: Validate
+        run: |
+          PGPASSWORD=postgres psql -h localhost -p 5432 -U postgres -d storedb -c "\dt"
+

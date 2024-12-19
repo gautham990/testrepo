@@ -1,12 +1,9 @@
-name: Multiline env
-
+name: CI
 on:
   push:
-    branches:
-      - main
 
 jobs:
-  job_1:
+  build:
     runs-on: ubuntu-latest
     steps:
     - name: Add step summery
