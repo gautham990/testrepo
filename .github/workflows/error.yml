@@ -7,7 +7,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Genereate an error
-        continue-on-error: true
+        # continue-on-error: true
         run: |
           sle3p 10
       - name: Get the uanme
