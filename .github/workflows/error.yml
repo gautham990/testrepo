@@ -10,7 +10,14 @@ jobs:
       - name: Genereate an error
         run: |
           sle3p 10
-          
+
       - name: Get the uanme
         run: |
           uname -a
+
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy
+        run: |
+          echo "Deploying the app"   
