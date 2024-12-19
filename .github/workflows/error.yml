@@ -3,13 +3,14 @@ on: push
 jobs:
   build:
     runs-on: ubuntu-latest
+    continue-on-error: true
     steps:
       - uses: actions/checkout@v4
 
       - name: Genereate an error
-        # continue-on-error: true
         run: |
           sle3p 10
+          
       - name: Get the uanme
         run: |
           uname -a
