@@ -9,7 +9,7 @@ jobs:
   job_1:
     runs-on: ubuntu-latest
     steps:
-    - name: Set the value in bash
+    - name: Add step summery
       id: step_one
       run: |
         echo "### Hello world! :rocket:" >> $GITHUB_STEP_SUMMARY
