@@ -1,4 +1,4 @@
-name: Caching with npm
+name: Test error handling
 on: push
 jobs:
   build:
